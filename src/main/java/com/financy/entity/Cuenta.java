@@ -37,6 +37,8 @@ public class Cuenta  {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_creacion;
 
+    private double saldo;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tipo_cuenta_id")
     @JsonIgnoreProperties(value={"hibernateLazyInitializer","handler"})

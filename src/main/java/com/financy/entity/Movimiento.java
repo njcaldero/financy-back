@@ -27,12 +27,13 @@ public class Movimiento {
     private Cuenta cuenta;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Date fecha_transaccion;
 
     @Positive(message = "El valor de la transacción debe ser mayor que cero")
     private double valor_transaccion;
 
-    private double saldo;
+
 
     @ManyToOne
     @JoinColumn(name = "tipo_transaccion_id")

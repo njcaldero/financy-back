@@ -45,10 +45,10 @@ public class MovimientoController {
 
     }
 
-    @GetMapping("/latest")
-    public ResponseEntity<List<Movimiento>> GetLatest() {
+    @GetMapping("/latest/{idCuenta}")
+    public ResponseEntity<List<Movimiento>> GetLatest(@PathVariable("idCuenta") Long idCuenta) {
 
-        List<Movimiento> listMovimiento = movimientoService.FindOrderedByFechaTransaccionLimitedTo();
+        List<Movimiento> listMovimiento = movimientoService.FindOrderedByFechaTransaccionLimitedTo(idCuenta);
 
         return ResponseEntity.ok(listMovimiento);
 

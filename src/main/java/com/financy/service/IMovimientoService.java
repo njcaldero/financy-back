@@ -9,5 +9,5 @@ public interface IMovimientoService {
     public List<Movimiento> GetAll();
     public Movimiento Create(Movimiento movimiento) throws Exception;
 
-    List<Movimiento> FindOrderedByFechaTransaccionLimitedTo();
+    List<Movimiento> FindOrderedByFechaTransaccionLimitedTo(Long idCuenta);
 }

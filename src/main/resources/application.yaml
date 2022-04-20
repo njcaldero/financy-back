@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    username: sa
+    initialization-mode: always
+    url: jdbc:sqlserver://localhost;databaseName=financydb
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: colom01
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2016Dialect
+      ddl-auto: update
+    defer-datasource-initialization: 'true'
+    show-sql: 'true'
+  mvc:
+    servlet:
+      load-on-startup: '1'
+
+server:
+  port: '8091'
+  error:
+    include-message: always
